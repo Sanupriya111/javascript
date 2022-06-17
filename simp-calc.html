@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>body {
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-image: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    color: rgb(104, 94, 94);
+}
+
+h1 {
+    color: white;
+}
+
+#container {
+    width: 100vh;
+    text-align: center;
+    margin: 20px auto;
+}
+
+#calculator {
+    width: 320px;
+    height: 520px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+#result {
+    height: 120px;
+}
+
+#history {
+    text-align: right;
+    height: 20px;
+    margin: 0 20px;
+    padding-top: 20px;
+    font-size: 15px;
+    color: #919191;
+}
+
+#output {
+    text-align: right;
+    height: 60px;
+    margin: 10px 20px;
+    font-size: 30px;
+}
+
+#keyboard {
+    height: 400px;
+}
+
+.operator,
+.number,
+.empty {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border-radius: 50%;
+    border-width: 0;
+    background-color: #eeeeee;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.number,
+.empty {
+    background-color: white;
+}
+
+.number,
+.operator {
+    cursor: pointer;
+}
+
+.operator:active,
+.number:active {
+    font-size: 13px;
+}
+
+.operator:focus,
+.number:focus,
+.empty:focus {
+    outline: 0;
+}
+
+button:nth-child(4) {
+    font-size: 20px;
+    background-color: #d9716f;
+    color: white;
+}
+
+button:nth-child(8) {
+    font-size: 20px;
+    background-color: #d9716f;
+    color: white
+}
+
+button:nth-child(12) {
+    font-size: 20px;
+    background-color: #d9716f;
+    color: white
+}
+
+button:nth-child(16) {
+    font-size: 20px;
+    background-color: #d9716f;
+    color: white;
+}
+
+button:nth-child(20) {
+    font-size: 20px;
+    background-color: #d9716f;
+    color: white;
+}</style>
+                    <!-- <input type="text" id="output-value"style="height:30px;width:280px;"> -->
+
+    <div id="container">
+        <h1>A simple calculator app</h1>
+        <div id="calculator">
+            <div id="result">
+                <div id="output">
+                    <input type="text" id="txt1" style="height:30px;width:280px;">
+                </div>
+            </div>
+            <div id="keyboard">
+                <button class="operator" id="clear" value="C"   onclick="clear1()">C</button>
+                <button class="operator" id="backspace" value="CE">CE</button>
+                <button class="operator" id="%" value="%"  onclick="dis('%')" >%</button>
+                <button class="operator" id="/" value="/"  onclick="dis('/')">/</button>
+                <button class="number" id="7" onclick="dis(7)" value="7">7</button>
+                <button class="number" id="8" value="8"  onclick="dis(8)">8</button>
+                <button class="number" id="9" value="9"  onclick="dis(9)">9</button>
+                <button class="operator" id="*" value="*" >*</button>
+                <button class="number" id="4" value="4"  onclick="dis(4)">4</button>
+                <button class="number" id="5" value="5"  onclick="dis(5)">5</button>
+                <button class="number" id="6" value="6"  onclick="dis(6)">6</button>
+                <button class="operator" id="-" value="-"  onclick="dis('-')">-</button>
+                <button class="number" id="1" value="1"  onclick="dis(1)">1</button>
+                <button class="number" id="2" value="2"  onclick="dis(2)">2</button>
+                <button class="number" id="3" value="3"  onclick="dis(3)">3</button>
+                <button class="operator" id="+" value="+"  onclick="dis('+')">+</button>
+                <button class="empty" id="empty"></button>
+                <button class="number" id="0" value="0"  onclick="dis(0)">0</button>
+                <button class="empty" id="empty"></button>
+                <button class="operator" id="=" value="="  onclick="calc()">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+      function dis(a)
+{
+  document.getElementById("txt1").value+=a
+
+  
+}
+function clear1()
+{
+  document.getElementById("txt1").value=" "
+}
+function calc()
+{
+   var p=document.getElementById("txt1").value
+   var q=eval(p);
+  document.getElementById("txt1").value=q;
+}
+ var arr1 = [3, 'a', 'a', 2, 3,   2, 4, 9, 3];
+var mf = 1;
+var m = 0;
+var item;
+
+for (var i = 0; i < arr1.length; i++) {
+  for (var j = i; j < arr1.length; j++) {
+    if (arr1[i] == arr1[j]) m++;
+    if (mf < m) {
+      mf = m;
+      item = arr1[i];
+
+    }
+  }
+
+  m = 0;
+}
+
+alert(item + " ( " + mf + " times ) ");
+    </script>
+    </body>
+</html>
+    

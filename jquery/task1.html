@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=
+	"https://ajax.googleapis.com/ajax/libs/
+	jquery/3.3.1/jquery.min.js">
+	</script>
+	
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h2 id="h1">Hello</h2>
+    <h1 id="h2">JavaScript</h1>
+    <h3 id="h3">A sample for jquery</h3>
+    <br>
+    <form>
+        Enter your name:<input type="text" id="txt1"><br>
+      <br>  Enter your age :<input type="text" id="txt2"><br><br>
+    <p id="p1">Helloo<label id="p2"></label>You are<label id="p3"></label>Years old</p><br>
+    <button>click me</button>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $('p').css("color","red");
+         $("#p1").hide();
+         $("button").click(function(){
+            $("#h1").css("color","red");
+            $("#h2").css("color","green");
+            $("#h3").css("color","yellow");
+           
+             $('#p1').show();
+             var  name=$("#txt1").val()
+             var age=$("#txt2").val()
+             console.log(name,age)
+             $("#p2").html(name);
+             $("#p3").html(age);
+         })
+        });
+        $("#p1").click(function () {
+            $("#p1").remove();
+        })
+    </script>
+</body>
+</html>

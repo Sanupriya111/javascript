@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+            color:red;
+        }
+    </style>
+</head>
+<body style="background:darkgoldenrod;">
+    <h2>TO DO LIST</h2>
+    
+    <label id="demo"></label>
+    <script>
+        
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var response=JSON.parse(this.responseText);
+          console.log(response)
+          var output="";
+          
+          for(var i=0;i<response.length;i++){
+              if(response[i].completed==true)
+              {
+                output+=`<input type="checkbox" name="ch" disabled checked>`
+              }else
+              {
+              output+=`<input type="checkbox" name="ch"  onclick="NewFn(this)">`
+              }
+             output+=response[i].title+"<h4>"
+             console.log(output)     
+          }
+          
+          
+       document.getElementById("demo").innerHTML = output
+      }
+    }
+    xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
+    xhttp.send();
+    var a=0
+
+    function NewFn(value) {
+             console.log(value.checked)
+              let promises= new Promise((resolve,reject)=>{
+                                 if(value.checked==true){
+                    a++;
+                   if(a>=5)
+                   {
+                    resolve("your ticked almost 5")
+                }
+            }else{
+                a--;
+            }
+            })
+            promises.then((message)=>{
+                alert(message)
+            })
+    
+        }
+            
+  
+    </script>
+</body>
+</html>

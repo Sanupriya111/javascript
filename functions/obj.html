@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="std"></p>
+    <p id="std1"></p>
+    <p id="std2"></p>
+    <p id="std3"></p>
+    <script>
+        var obj = {
+            name: "sanu",
+            age: 26,
+            place: "olavanna",
+            marks: { subject: "english", mark: 80 },
+            per: () => {
+                return "20%"
+            }
+        }
+       // document.getElementById("demo").innerHTML = obj.name + "  is  " + obj.age + " years old women" + " from  " + obj.place;
+        //document.getElementById("demo2").innerHTML = obj.per()
+       // document.getElementById("demo3").innerHTML = obj.place;
+        var student = [{
+            name: "sanu", 
+            class: "cs",
+             marks:{subject:"english",mark:90}},
+        {
+            
+        name: "shilpa", 
+        class: "Mca", 
+        marks:  {subject:"malayalam",mark:80}
+        }     
+    , 
+        { 
+            name: 'prabi', 
+            class: "msc", 
+            marks:{subject:"history",mark:90}
+    
+        }]
+        var array = Object.keys(student).map(function (key) {
+        return student[key];
+      });
+      console.log(array);
+      document.getElementById("demo").innerText = array;
+      let detail = "";
+      for (let x of student) {
+        for (let y in x) {
+          if (y === "marks") {
+            let temp = "";
+            Object.keys(x[y]).map(
+              (itm, key) => (temp += x[y][itm] + (key == 1 ? "," : " : "))
+            );
+            detail += temp;
+          } else detail += x[y] + " ";
+
+          document.getElementById("demo").innerHTML = detail;
+        }
+      }
+      alert(JSON.stringify(detail));
+    
+  </script>
+</body>
+
+</html>

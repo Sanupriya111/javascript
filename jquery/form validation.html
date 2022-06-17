@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+    
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+h1 {
+  text-align: center;
+}
+
+input[type=text], input[type=email], input[type=password], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.error {
+  display: block;
+  margin-bottom: 10px;
+  color: red;
+}
+    </style>
+</head>
+<body>
+    <h1>CONTACT FORM</h1>
+
+<div class="container">
+  <form action="" id="contactForm">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" placeholder="Your first name..">
+
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" placeholder="Your last name..">
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email..">
+    
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" placeholder="Your phone..">
+    
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Your password..">
+    
+    <label for="confirmpassword">Confirm Password</label>
+    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Your confirm password..">
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<script>
+    jQuery.validator.addMethod("name_regex", function(value, element) {
+    return this.optional(element) || /^[a-zA-z\.\-_]{1,30}$/i.test(value);
+}, "Firstname with only a-z A-Z.");
+jQuery.validator.addMethod("phone_regex", function(value, element) {
+    return this.optional(element) || /^[0-9\.\-_]{10,30}$/i.test(value);
+}, "Phone Number with only 0-9. Minlength: 10");
+jQuery.validator.addMethod("password_regex", function(value, element) {
+    return this.optional(element) || /^[a-z0-9!@#$%^&*()_\.\-_]{8,30}$/i.test(value);
+}, "Password of atleast 8 characters.");
+$.validator.addMethod('filesize', function (value, element, param) {
+    return this.optional(element) || (element.files[0].size <= param)
+}, 'File size must be less than {0}');
+$("#contactForm").validate({
+    rules: {
+
+        'firstname': {
+            required: true,
+            minlength: 1,
+            name_regex: true,
+        },
+        'lastname': {
+            required: true,
+            minlength: 1,
+            name_regex: true
+        },
+        'email': {
+            required: true,
+            email: true
+        },
+        'phone': {
+            required: true,
+            phone_regex: true,
+            minlength: 10
+        },
+        'password': {
+            required: true,
+            password_regex: true,
+            minlength: 8
+
+        },
+        'confirmpassword': {
+            equalTo: '#password'
+        }
+
+    },
+
+    messages: {
+
+        'firstname': {
+            required: "The firstname field is mandatory!",
+        },
+        'lastname': {
+            required: "The lastname field is mandatory!",
+        },
+        'email': {
+            required: "The Email is required!",
+            email: "Please enter a valid email address!"
+        },
+        'phone': {
+            required: "The phone field is mandatory!",
+        },
+        'password': {
+            required: "The password field is mandatory!"
+        },
+        'confirmpassword': {
+            equalTo: "The two passwords do not match!"
+        },
+
+    },
+    submitHandler: function(form) {
+        form.submit();
+    }
+});
+</script>
+</body>
+</html>

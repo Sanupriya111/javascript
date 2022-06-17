@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+        
+  button {
+      font-size: large;
+  }
+</style>
+</head>
+<body>
+<h1 style="text-align: center;">JavaScript Program to Get the Dimensions of an Image</h1>
+<img id="image"src="E:\maitexa\tourismweb\public\ezhimala_files\ezhimala-sightseeing-4871_data_003"style="display:block; margin:0 auto">
+<button type="submit" style="margin:0 auto;display:block"
+      onclick="myFunc()">
+Get height and width
+</button>
+<p id="width"></p>
+<p id="height"></p>
+<script>
+function myFunc() {
+  let image = document.getElementById('image');
+  let height = document.getElementById('height');
+  var width = document.getElementById('width');
+
+  height.innerHTML =("height:" + image.clientHeight)
+  
+  width.innerHTML = ("width:"+ image.clientWidth) 
+}
+
+
+</script>
+
+
+</body>
+</html>

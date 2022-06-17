@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Program to Convert Date to Number</h2>
+    <h4>Current date:<p id="date"></p></h4>
+    <button onclick="convertDate()">convert</button>
+    <p id="convert"></p>
+    <script>
+        var d1 = new Date();
+console.log(d1);
+document.getElementById("date").innerHTML=d1
+let convertDate=()=>{
+const result = d1.getTime();
+console.log(result);
+document.getElementById("convert").innerHTML=result
+}
+    </script>
+</body>
+</html>

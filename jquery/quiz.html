@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1">
+    <p id="p1"></p>
+    <button>Submit</button></div>
+    <script>
+        (function(){
+        let questins=[{
+            question:"who is the cm of kerala?",options:{
+            op1:"pinarayi vijayan",
+            op2:"umman chandi",
+            op3:"kM maani"},
+            ans:"pinarayi vijayan"
+
+        },
+    {
+        question:"where is the capital of kerala?",options:{
+            op1:"kollam",
+            op2:"kozhikode",
+            op3:"thiruvanathapuram"},
+            ans:"thiruvanathapuram"
+        },
+        {
+            question:"where is the capital of kerala?",options:{
+            op1:"kollam",
+            op2:"kozhikode",
+            op3:"thiruvanathapuram"},
+            ans:"thiruvanathapuram"
+       
+        }
+    ]
+var arr=[];
+questions.forEach(element,index => {
+    const ans=[];
+    for (const opt in element.options){
+
+    ans.push(
+        `<label><input type="radio" name="questions${index}" value="${opt}">
+            ${opt};
+            ${element.options[opt]}
+            </label>`)
+        }
+        
+     
+        arr.push(
+        `<div>${element.question}</div>
+        <div>${ans.join('')}</div>`)
+        document.getElementById("d1").innerHTML=arr.join('')
+
+     })
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cars = [{ color: "black", type: "BMW", registration: new Date("03-12-2020"), capasity: 5 }, 
+        { color: "black", type: "swift", registration: new Date("04-10-2020"), capasity: 6 },
+         { color: "red", type: "volvo", registration:  new Date("03-12-2021"), capasity: 8 },
+          { color: "blue", type: "baleno", registration:  new Date("02-11-2020"), capasity: 5 },
+           { color: "red", type: "BMW", registration: new Date("03-12-2022"), capasity: 6},
+            { color: "red", type: "bolero", registration:  new Date("02-12-2010"), capasity: 5 },
+             { color: "green", type: "swift", registration:  new Date("03-12-2021"), capasity: 3 }, 
+             { color: "black", type: "baleno", registration:   new Date("04-12-2020"),capasity: 6 },
+             {color:"red",type:"BMW",registration: new Date("03-09-2020"),capasity:7},
+             {color:"black",type:"volvo",registration: new Date("05-12-2020"),capasity:5}]
+             cars.unshift({color: "red", type: "Lamborgini", registration:  new Date("03-12-2021"), capasity: 8})
+             console.log(cars)
+             cars.push({color: "green", type: "swift", registration:  new Date("03-12-2021"), capasity: 8})
+             console.log(cars)
+             let start = 2;
+let deleteCount = 0;
+let y={color:"red",type:"hello",registration: new Date("03-09-2020"),capasity:7}
+cars.splice(start, deleteCount, y);
+console.log(cars)
+//const blue=cars.find(({color})=> color ==="blue")
+function  isBlue(cars)
+ {
+    return cars.color==="blue"
+}
+console.log(cars.find(isBlue))
+function  isgreen(cars)
+ {
+    return cars.color==="green"&&cars.type==='swift'
+
+}
+console.log(cars.filter(isgreen))
+const result = cars.filter(cars => cars.color==="black");
+console.log(result)
+const final = cars.filter(cars => cars.capasity===5);
+console.log(final)
+
+
+    </script>
+</body>
+
+</html>

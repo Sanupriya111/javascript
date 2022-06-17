@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="third.css" type="text/css">
+    <title>Document</title>
+    <style>
+        .t-section1{
+    height: 750px;
+    width: 100%;
+}
+.header{
+    height:65px;
+    width: 100%;
+    display: flex;
+    
+}
+.img{
+    margin-left: 500px;
+    border-radius: 50px;
+    height: 200px;
+    width: 200px;
+}
+.textbox{
+    height:40px;
+     width: 500px; 
+     margin-top: 20px;
+     margin-left: 400px;
+}
+    </style>
+</head>
+
+<body>
+    <section class="t_section1">
+        <header class="header">
+            <form  name="myForm"  onsubmit=" return validateForm()" >
+            <h1 style="margin-left: 400px;">Loginpage</h1>
+        </header>
+        <label style="margin-left: 400px;">Username:</label><br>
+        <input type="text" placeholder="Enter User Name" class="textbox" name="fname" required><br>
+        <label style="margin-left: 400px;">Password:</label><br>
+        <input type="text" placeholder="Enter Password" class="textbox" name="pwd" required><br><br>
+        <input type="submit" value="Submit" style="height: 32px; width: 500px; margin-top: 20px; background-color:green; 
+            color:honeydew;margin-left: 400px;"><br><br>
+        <input type="checkbox" style="margin-left: 400px;"><label>Remember me</menu></label></form>
+        <footer style="height: 20px;width: 100%; background-color: lightgray;"></footer>
+    </section>
+<script>
+    function validateForm()
+    {
+        var x=document.myForm.fname.value;
+        if(x.length<4){  
+        alert("Name must be at least 4 characters long.");  
+        return false;  
+  }  
+  var y=document.myForm.pwd.value;
+  if(y.length<6)
+  {
+alert("password must be at least 6 charectors long");
+return false;
+
+  }
+  
+    }
+</script>
+</body>
+</html>

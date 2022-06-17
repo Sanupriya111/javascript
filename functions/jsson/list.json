@@ -1,0 +1,75 @@
+{
+    "list":[
+        {
+            "no":"1",
+            "item":"rice",
+            "quantity":"5",
+            "unit":"kg",
+            "department":"grocery"
+        },
+        {
+            "no":"2",
+            "item":"suger",
+            "quantity":"1",
+            "unit":"kg",
+            "department":"grocery"
+        },
+        {
+            "no":"3",
+            "item":"tea powder",
+            "quantity":"1",
+            "unit":"kg",
+            "department":"grocery"
+        },
+        {
+            "no":"4",
+            "item":"milk powder",
+            "quantity":"1",
+            "unit":"pack",
+            "department":"grocery"
+        },
+        {
+            "no":"5",
+            "item":"oil",
+            "quantity":"500",
+            "unit":"ltr",
+            "department":"grocery"
+        },
+        {
+            "no":"6",
+            "item":"beans",
+            "quantity":"500",
+            "unit":"kg",
+            "department":"vegitable"
+        },
+        {
+            "no":"7",
+            "item":"Rice powder",
+            "quantity":"5",
+            "unit":"kg",
+            "department":"stationary"
+        },
+        {
+            "no":"8",
+            "item":"rice flakes",
+            "quantity":"1",
+            "unit":"kg",
+            "department":"stationary"
+        },
+        {
+            "no":"9",
+            "item":"gaggerry",
+            "quantity":"1",
+            "unit":"kg",
+            "department":"stationary"
+        },
+   
+        {
+            "no":"10",
+            "item":"tomato",
+            "quantity":"5",
+            "unit":"g",
+            "department":"vegitable"
+        }
+   ]
+}

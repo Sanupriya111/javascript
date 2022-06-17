@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+</head>
+
+<body>
+    
+            
+        <div class="container">
+            <div class="row">
+              <h1 style="text-align: center;">RECEIPT</h1>
+            </div><hr>
+            <div class="row bg-secondary">
+              <div class="col-lg-4">
+                <label>item</label>
+              </div>
+              <div class="col-lg-4">
+                <label>quantity</label>
+              </div>
+              
+              <div class="col-lg-4">
+                <label>total</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"style="padding: 0;">
+                  <select id="item"style="width: 100%;height:30px";>
+                    <option>Choose an item</option>
+                        <option value="10">TEA</option>
+                        <option value="15">COFEE</option>
+                        <option value="30">jUICE</option>
+                        <option value="5">LIME</option>
+                    </select>
+                </div>
+                <div class="col-lg-4"style="padding: 0;">
+                  <input type="number" id="q" style="width: 100%">
+                </div>
+                <div class="col-lg-4"style="padding: 0;">
+                  <input type="text" id="total"style="width: 100%">
+                </div>
+              </div>  
+              <div class="row">
+                <div class="col-lg-4"style="padding: 0;">
+                  <select id="item"style="width: 100%;height:30px";>
+                    <option>Choose an item</option>
+                        <option value="10">TEA</option>
+                        <option value="15">COFEE</option>
+                        <option value="30">jUICE</option>
+                        <option value="5">LIME</option>
+                    </select>
+                </div>
+                <div class="col-lg-4"style="padding: 0;">
+                  <input type="number" id="q" style="width: 100%">
+                </div>
+                <div class="col-lg-4"style="padding: 0;">
+                  <input type="text" id="total"style="width: 100%">
+                </div>
+              </div>  
+              <div class="row">
+                <div class="col-lg-4"style="padding: 0;">
+                  <select id="item"style="width: 100%;height:30px";>
+                    <option>Choose an item</option>
+                        <option value="10">TEA</option>
+                        <option value="15">COFEE</option>
+                        <option value="30">jUICE</option>
+                        <option value="5">LIME</option>
+                    </select>
+                </div>
+                <div class="col-lg-4"style="padding: 0;">
+                  <input type="number" id="q" style="width: 100%">
+                </div>
+                <div class="col-lg-4"style="padding: 0;">
+                  <input type="text" id="total"style="width: 100%">
+                </div>
+              </div>  
+              <div class="row">
+                <div class="col-lg-4"style="padding: 0;">
+                  <select id="item"style="width: 100%;height:30px";>
+                    <option>Choose an item</option>
+                        <option value="10">TEA</option>
+                        <option value="15">COFEE</option>
+                        <option value="30">jUICE</option>
+                        <option value="5">LIME</option>
+                    </select>
+                </div>
+                <div class="col-lg-4"style="padding: 0;">
+                  <input type="number" id="q" style="width: 100%">
+                </div>
+                <div class="col-lg-4"style="padding: 0;">
+                  <input type="text" id="total"style="width: 100%">
+                </div>
+              </div>  
+             
+              <input type="button" value="Bill Generate" class="btn btn-large" id="getbill">
+              <br><br>
+              <textarea class="bill" cols="100" rows="12" id="writeme"></textarea>
+        
+
+    </div>
+    <script>
+        var x = document.getElementById("item").value;
+        var a=document.getElementById("ab").value;
+        function myFunction() {
+document.getElementById("demo").innerHTML = x;
+}
+//  function totalAmount()
+//  {
+// result=x*a;
+// document.getElementById("demo1").innerHTML=result;
+//  }
+
+    </script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

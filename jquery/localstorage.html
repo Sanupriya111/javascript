@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=
+	"https://ajax.googleapis.com/ajax/libs/
+	jquery/3.3.1/jquery.min.js">
+	</script>
+    <style>
+        .t-section1 {
+            height: 750px;
+            width: 100%;
+        }
+
+        .header {
+            height: 65px;
+            width: 100%;
+            display: flex;
+
+        }
+
+        .img {
+            margin-left: 500px;
+            border-radius: 50px;
+            height: 200px;
+            width: 200px;
+        }
+
+        .textbox {
+            height: 40px;
+            width: 500px;
+            margin-top: 20px;
+            margin-left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <section style="text-align: center;">
+        <header>
+
+            <div>
+                <h1 >Registration form</h1>
+            </div>
+        </header>
+
+        <form name="myForm" onsubmit="  ">
+            <label >Userid:</label> <br><input type="text"
+                placeholder="Userid" id="name"><br>
+            <label >Password:</label> <br><input type="text"
+                placeholder="Password"  id="pw" ><br>
+                <input id="rgstr_btn" type="submit" value="get Account" onClick="store()"/>
+
+
+    </section>
+
+    <section class="t_section1">
+        <header class="header">
+            <form name="myForm" action="/action_page.php" >
+                <h1 style="margin-left: 400px;">Loginpage</h1>
+        </header>
+        <label style="margin-left: 400px;">Username:</label><br>
+        <input type="text" placeholder="Enter User Name" class="textbox" name="fname" id="userName"><br>
+        <label style="margin-left: 400px;">Password:</label><br>
+        <input type="text" placeholder="Enter Password" class="textbox" name="pwd" id="userPw"><br><br>
+        <input type="submit"  id="login_btn"value="Submit" onclick="check()" style="height: 32px; width: 500px; margin-top: 20px; background-color:green; 
+            color:honeydew;margin-left: 400px;"><br><br>
+        <input type="checkbox" style="margin-left: 400px;"><label>Remember me</menu></label></form>
+        <p id="p1">Helloo<label id="p2"></label>You are successfully Login</p><br>
+        <footer style="height: 20px;width: 100%; background-color: lightgray;"></footer>
+    </section>
+    <script>
+        var rname = document.getElementById('name');
+        var pw = document.getElementById('pw');
+        $('#p1').hide();
+        function store() {
+    localStorage.setItem('name', rname.value);
+    localStorage.setItem('pw', pw.value);
+}
+function check() {
+var storedName = localStorage.getItem('name');
+var storedPw = localStorage.getItem('pw');
+var userName = document.getElementById('userName');
+var userPw = document.getElementById('userPw');
+if(userName.value == storedName || userPw.value == storedPw) {
+        alert('You are loged in.');
+        $('#p1').show();
+             var  name=$("#userName").val()
+             $("#p2").html(name);
+           
+
+    }else {
+        alert('ERROR');
+           }
+            
+           
+}
+
+
+
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.s_section1{
+        height: 750px;
+        width: 100%;
+        /* background-image: url("cc.jpg"); */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: gray;
+        
+    }
+    .header{
+        height:65px;
+        width: 100%;
+        background-color: black;
+        color: blanchedalmond;
+        display: flex;
+    }
+    .hediv{
+        width: 326px;
+        margin: 0;
+    
+    }
+    .h1{
+        margin-left: 500px;
+        
+    }
+    .class1{
+        margin-left: 426px;
+         display: block;
+    }
+    .textbox{
+        height:40px;
+         width: 300px; 
+         margin-top: 20px;
+    }
+    .displayBadge{
+            margin-top: 5%; 
+            
+            text-align :center;
+        }
+    </style>
+</head>
+<body>
+    <section class="s_section1">
+        <header class="header">
+
+            <div class="heddiv">
+                <h1 class="h1">Registration form</h1>
+            </div>
+        </header>
+        
+        <form class="class1" name="myForm" onsubmit="  ">
+            <label>Userid:</label> <br><input type="text" placeholder="Userid" class="textbox"><br>
+            <label>Password:</label> <br><input type="text" placeholder="Password" class="textbox" name="pwd" onkeyup="validatePassword(this.value);">
+            <span id="msg"></span>
+
+  <br>
+            
+            <label>Phone number</label> <br><input type="text" placeholder="phone" class="textbox" name="
+            ph"> <span id="phn"></span><br>
+            <br><label>Email:</label> <br><input type="email" placeholder="Email" class="textbox" name="em"><br>
+            
+            <br> <input type="submit" value="Submit"onclick="ValidateEmail();phonenumber();validatePassword(password)"
+                style="height: 32px; width: 150px; margin-top: 20px; background-color: green;"> </form>
+          
+
+    </section>
+    <script>
+   var inputtxt=document.myForm.ph;
+    function phonenumber()
+{
+  var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if(inputtxt.value.match(phoneno))
+     {
+	   return true;
+	 }
+   else
+     {
+	   alert("Not a valid Phone Number");
+	   return false;
+     }
+}
+
+function ValidateEmail() 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.em.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+    
+function validatePassword(password) {
+                
+                // Do not show anything when the length of password is zero.
+                if (password.length === 0) {
+                    document.getElementById("msg").innerHTML = "";
+                    return;
+                }
+                // Create an array and push all possible values that you want in password
+                var matchedCase = new Array();
+                matchedCase.push("[$@$!%*#?&]"); // Special Charector
+                matchedCase.push("[A-Z]");      // Uppercase Alpabates
+                matchedCase.push("[0-9]");      // Numbers
+                matchedCase.push("[a-z]");     // Lowercase Alphabates
+
+                // Check the conditions
+                var ctr = 0;
+                for (var i = 0; i < matchedCase.length; i++) {
+                    if (new RegExp(matchedCase[i]).test(password)) {
+                        ctr++;
+                    }
+                }
+                // Display it
+                var color = "";
+                var strength = "";
+                switch (ctr) {
+                    case 0:
+                    case 1:
+                    case 2:
+                        strength = "Poor";
+                        color = "red";
+                        break;
+                    case 3:
+                        strength = "Medium";
+                        color = "orange";
+                        break;
+                    case 4:
+                        strength = "Strong";
+                        color = "green";
+                        break;
+                }
+                document.getElementById("msg").innerHTML = strength;
+                document.getElementById("msg").style.color = color;
+            }
+
+       </script>
+</body>
+</html>

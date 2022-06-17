@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <p>
+        <h1>Ask some questions</h1>
+        </p>&nbsp;<a href="#1"><button type="button" class="btn btn-danger" onclick="">Go</button></a>
+    </div>
+    <div id="1">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; "> Check whether it is prime or not?</p>
+            <!-- <form name="myform">
+                <input type="text" name=n value=""><label  id="result"style="height: 30px;width: 200px;"></label>
+                <button type="button" class="btn btn-warning"
+                onclick="p()">Result</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning"
+                onclick="">Next</button>
+             -->
+            <input type="text" id="prime" value="" style="height: 30px;width:200px;"><label id="result"
+                style="height: 30px;width: 200px;"></label><br><button type="button" class="btn btn-warning"
+                onclick=" p()">Answer</button>&nbsp;&nbsp;<a href="#2"><button type="button"
+                    class="btn btn-warning" onclick="">Next</button></a>
+        </div>
+    </div>
+    <div id="2">
+        <div style="margin-top: 300px;">
+            <p style="color: rgb(31, 27, 22); "> most frequent item of an array?</p><input type="text" id="frequent"
+                style="height: 30px;width:200px; " value=""><label id="2result"
+                style="height: 30px;width: 200px;"></label><br><button id="button" type="button" class="btn btn-warning"
+                onclick="findItem()">Answer</button>&nbsp;&nbsp;<a href="#3"><button type="button"
+                    class="btn btn-warning" onclick="">Next</button></a>
+        </div>
+    </div>
+    <div id="3">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; "> accept a string as input and swap the case of each character?</p><input
+                type="text" id="upper" style="height: 30px;width:200px;"><label id="3result"
+                style="height: 30px;width: 200px;"></label><br><button type="button" class="btn btn-warning"
+                onclick="upper()">Answer</button>&nbsp;&nbsp;<a href="#4"><button type="button" class="btn btn-warning"
+                    onclick="">Next</a></button>
+        </div>
+    </div>
+    <div id="4">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; ">display the message to the screen as odd or even?</p><input type="text"
+                id="even" style="height: 30px;width:200px;"><label id="4result"
+                style="height: 30px;width: 200px;"></label><br><button type="button" class="btn btn-warning"
+                onclick=" oddEven()">Answer</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning"
+                onclick="">Next</button>
+        </div>
+    </div>
+    <div id="5">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; "> truncate a string if it is longer than the<br> specified number of
+                characters? </p><input type="text" style="height: 30px;width:200px;"><label
+                style="height: 30px;width: 200px;"></label><br><button type="button" class="btn btn-warning"
+                onclick="">Answer</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning"
+                onclick="">Next</button>
+        </div>
+    </div>
+    <div id="6">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; "> accept two integers and display the larger<br> using findLarge()
+                function?</p><input type="text" id="fnum" style="height: 30px;width:200px;"><input type="text"
+                style="height: 30px;width:200px;" id="snum"><label style="height: 30px;width: 200px;"></label><br><button
+                type="button" class="btn btn-warning" onclick="largesstnum()">Answer</button>&nbsp;&nbsp;<button type="button"
+                class="btn btn-warning" onclick="">Next</button>
+        </div>
+    </div>
+    <div id="7">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; "> to find the sum of squares of the elements of an array?</p><input
+                type="text" id="sum" style="height: 30px;width:200px;"><label id="7result"
+                style="height: 30px;width: 200px;"></label><br><button type="button" class="btn btn-warning"
+                onclick="sumSquar()">Answer</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning"
+                onclick="">Next</button>
+        </div>
+    </div>
+    <div id="8">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; "> star pattern, using a nested for loop</p><input type="text"
+                style="height: 30px;width:200px;"><label style="height: 30px;width: 200px;"></label><br><button
+                type="button" class="btn btn-warning" onclick="pattern()">Answer</button>&nbsp;&nbsp;<button
+                type="button" class="btn btn-warning" onclick="">Next</button>
+        </div>
+    </div>
+    <div id="9">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; "> entered by an user and to arrange it in alphabetical order</p><input
+                type="text" id="sort"style="height: 30px;width:200px;"><label
+                style="height: 30px;width: 200px;"id="alp"></label><br><button type="button" class="btn btn-warning"
+                onclick="sortarr()">Answer</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning"
+                onclick="">Next</button>
+        </div>
+    </div>
+    <div id="10">
+        <div style="margin-top: 300px;">
+            <p style="color: blanchedalmond; "> print the letters of the word “Javascript</p><input type="text"
+                style="height: 30px;width:200px;"><label style="height: 30px;width: 200px;"></label><br><button
+                type="button" class="btn btn-warning" onclick="ab()">Answer</button>&nbsp;&nbsp;<button type="button"
+                class="btn btn-warning" onclick="">Next</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+             
+function p() {
+              
+              var n, i, flag = true;
+              const string=document.getElementById("prime").value
+              n = parseInt(string[0])
+              for(i = 2; i <= n - 1; i++)
+                  if (n % i == 0) {
+                      flag = false;
+                      break;
+                  }
+                    
+                if (flag == true)
+                {
+              document.getElementById("result").innerHTML = "prime"
+                }
+              else
+              
+              document.getElementById("result").innerHTML = "not prime"    
+          }
+      
+
+ //most freequent
+        function findItem() {
+            var arr1 = document.getElementById("frequent").value;
+            var mf = 1;
+            var m = 0;
+            var item;
+
+            for (var i = 0; i < arr1.length; i++) {
+                for (var j = i; j < arr1.length; j++) {
+                    if (arr1[i] == arr1[j]) m++;
+                    if (mf < m) {
+                        mf = m;
+                        item = arr1[i];
+
+                    }
+                }
+
+                m = 0;
+            }
+
+            document.getElementById("2result").innerHTML = item;
+        }
+        findItem();
+        //upercase
+        function upper() {
+            var str = document.getElementById("upper").value;
+            var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+            var result = [];
+
+            for (var x = 0; x < str.length; x++) {
+                if (UPPER.indexOf(str[x]) !== -1) {
+                    result.push(str[x].toLowerCase());
+                }
+                else if (LOWER.indexOf(str[x]) !== -1) {
+                    result.push(str[x].toUpperCase());
+                }
+                else {
+                    result.push(str[x]);
+                }
+            }
+            document.getElementById("3result").innerHTML = result.join('')
+        }
+        upper();
+        //even
+        function oddEven() {
+        let num = document.getElementById("even").value;
+        var odd=[];
+        var even=[];
+        for (var x = 0; x <= 15; x++) {
+                if (x % 2 === 0) {
+                        odd.push(x);
+                        // document.getElementById("demo5").innerHTML = (x + " is even");
+                }
+                else {
+                       even.push(x);
+                        // document.getElementById("demo5").innerHTML = (x + " is odd");
+                }
+        }
+        document.getElementById("4result").innerHTML =`Odd ${odd} Even ${even} `;
+        
+
+
+}
+//sum of squres
+function sumSquar() {
+        arr = document.getElementById("sum").value.split(",")
+    
+        var sum = 0,
+                i = arr.length;
+        while (i--)
+                sum += Math.pow(arr[i], 2);
+        console.log(sum)
+        document.getElementById("7result").innerHTML = sum;
+}
+//alphebets
+function sortarr() {
+        arr1 = document.getElementById("sort").value.split(",")
+    var result;
+    for( let i=arr1.length;i<=arr1.length;i++){
+        result=arr1.sort();
+        result1=result.reverse()
+    }
+ 
+        document.getElementById("alp").innerHTML = result1;
+}
+
+sortarr();
+
+        //patern
+        function pattern() {
+            let n = 5;
+            let string = "";
+            for (let i = 1; i <= n; i++) {
+                for (let j = 0; j < i; j++) {
+                    string += "*";
+                }
+                string += "\n";
+            }
+            alert(string);
+        }
+        //alphebet pattern
+        function sum_sq(array) {
+            var sum = 0,
+                i = array.length;
+            while (i--)
+                sum += Math.pow(array[i], 2);
+            return sum;
+            document.getElementById("7result").innerHTML = sum;
+        }
+
+        (sum_sq([0, 1, 2, 3, 4]));
+        //find  large
+        function largesstnum() {
+            var num1, num2;
+            num1 = Number(document.getElementById("fnum").value);
+            num2 = Number(document.getElementById("snum").value);
+
+            if (num1 > num2) {
+                window.alert(num1 + "-is Larger");
+            }
+            else if (num2 > num1) {
+                window.alert(num2 + "-is Larger");
+            }
+            else if (num2 > num1 && num2 > num1) {
+                window.alert(num2 + "is Larger");
+            }
+        }
+        //javascript
+        function ab()
+        {
+            var str;
+        let string=""
+        var arr=["j","a","v","a","s","c","r","i","p","t"];
+        for(let i=0;i<=arr.length;i++){
+            for(let j=0;j<i;j++)
+            {
+                string+=arr[j];
+            }
+            string+="\n";
+        }
+alert(`<pre>${string}</pre>`);
+}
+ab();
+
+function alphabet_order(str)
+
+  {
+return str.split('').sort().join('');
+  }
+console.log(alphabet_order(str));
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

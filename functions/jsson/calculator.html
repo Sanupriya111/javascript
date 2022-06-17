@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="height: 400px;width: 200px;background-color: cadetblue;margin-left: 300px;">
+    Number1:<input type="number"id="first"><br>
+    Number2:<input type="number" id="second"><br>
+   Operations: <button id='add'onclick="calc(add)">+</button>
+    <button id='sub'onclick="calc(sub)">-</button>
+    <button id='mul'onclick="calc(mul)">*</button>
+    <button id='div'onclick="calc(div)">/</button>
+    <br>
+   Result: <input type="text"id="result"></div>
+    <script>
+        function calc( callback) {
+        var n1=parseInt(document.getElementById("first").value)
+        var n2=parseInt(document.getElementById("second").value)
+        var result=callback(n1,n2)
+        document.getElementById("result").value=result
+
+        }
+
+        function add(a,b) {
+            return a+b
+            
+        }
+        function sub(a,b) {
+            return a-b
+            
+            
+        }
+        function mul(a,b) {
+            return a*b
+            
+            
+        }
+        function div(a,b) {
+            return a/b
+            
+            
+        }
+    
+    </script>
+</body>
+</html>

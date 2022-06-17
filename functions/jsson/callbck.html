@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button id="button" >click me</button>
+    <script>
+        function display(result) {
+           document.getElementById("demo").innerHTML=result;
+            
+        }
+    
+        function add(a,b,callback) {//callback functin
+            var result=a+b;
+            callback(result)
+        }
+     add(12,3,display)
+       // document.getElementById("button").onclick=add(12,2,display);
+    </script>
+</body>
+</html>

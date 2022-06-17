@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div style="height: 400px;width: 100%;background-color: darkcyan; color: brown; ">
+    <form style="margin-left:500px;">
+    <h2>charetor Count: <span id="count">0</span></h2><h2>Word Count: <span id="wcount">0</span></h2>
+  <textarea id="input" rows="10" style="width: 300px;" onkeypress="wordCounter();charectorCounter()"></textarea></div></form>
+  <!-- <button onclick="wordCounter()">charectorcount</button>  
+  <button onclick="charectorCounter()">wordcount</button>-->
+  <script> 
+      
+      wordCounter();
+
+    function wordCounter() {
+  var text = document.getElementById('input').value;
+  console.log(text)
+  var wordCount = 0;
+  for (var i = 0; i < text.length; i++) {
+ if (text[i] !== ' ') {
+      wordCount+=1;
+      console.log(wordCount)
+    }
+   }
+  
+      document.getElementById('count').innerHTML = wordCount;
+
+}
+function charectorCounter()
+{
+  var words = document.getElementById('input').value;
+var count = 0;
+ var split = words.split(' ');
+ for (var i = 0; i < split.length; i++) {
+                if (split[i] != "") {
+                    count += 1;
+                }
+            }
+            document.getElementById('wcount').innerHTML = count;
+}
+charectorCounter();
+</script>
+
+</body>
+</html>
